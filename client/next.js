@@ -9,7 +9,7 @@ const dir = path.join(process.cwd(), './client')
 const app = next({
   dev,
   dir,
-  conf,
+  conf
 })
 
 export default app

@@ -2,8 +2,8 @@ const httpProxy = require('koa-proxies')
 
 const proxyTable = {
   '/exchange': {
-    target: 'https://www.binance.com/',
-  },
+    target: 'https://www.binance.com/'
+  }
 }
 
 const setProxies = server => {
@@ -11,7 +11,7 @@ const setProxies = server => {
     const cfg = {
       changeOrigin: true,
       logs: true,
-      ...proxyTable[context],
+      ...proxyTable[context]
     }
 
     server.use(httpProxy(context, cfg))

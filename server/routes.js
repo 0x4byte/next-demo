@@ -7,7 +7,7 @@ const handle = nextApp.getRequestHandler()
 const renderHtml = async (ctx, pageName) => {
   return nextApp.renderToHTML(ctx.req, ctx.res, pageName, {
     ...ctx.params,
-    ...ctx.query,
+    ...ctx.query
   })
 }
 

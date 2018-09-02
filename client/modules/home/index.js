@@ -8,7 +8,7 @@ import { add } from './reducer'
 
 class Home extends React.Component {
   state = {
-    value: 1,
+    value: 1
   }
 
   setSelectValue = () => {
@@ -51,7 +51,7 @@ class Home extends React.Component {
 
 export default connect(
   state => ({
-    count: state.home.count,
+    count: state.home.count
   }),
   { add }
 )(Home)

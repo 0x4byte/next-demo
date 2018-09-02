@@ -2,7 +2,7 @@ import { combineReducers } from 'redux'
 import home from '../modules/home/reducer'
 
 const reducer = combineReducers({
-  home,
+  home
 })
 
 export default reducer

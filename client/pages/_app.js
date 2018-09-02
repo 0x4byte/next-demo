@@ -21,7 +21,7 @@ class Body extends App {
 
     props.appProps = {
       locale: queryLocale,
-      messages: data,
+      messages: data
     }
 
     props.pageProps = {}

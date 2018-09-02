@@ -3,12 +3,12 @@ export const localData = {
     bnb: 'zh',
     locale: 'zh',
     label: '简体中文',
-    'Account activated': '账户激活',
+    'Account activated': '账户激活'
   },
   en: {
     bnb: 'en',
     locale: 'en',
     label: 'English',
-    'Account activated': 'Account activated',
-  },
+    'Account activated': 'Account activated'
+  }
 }

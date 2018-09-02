@@ -16,7 +16,7 @@ const ignoreUrls = [
   '.js.map$',
   '.hot-update.json$',
   '.(png|jpg|gif)$',
-  '/_next/*',
+  '/_next/*'
 ]
 
 // ignore url.
@@ -45,7 +45,7 @@ const logWrap = () => {
       reqQuery: ctx.query,
       reqBody: ctx.request.body,
       reqHeader: ctx.request.headers,
-      spendTime: new Date().getTime() - startTime + 'ms',
+      spendTime: new Date().getTime() - startTime + 'ms'
     }
 
     let format = '\n{'

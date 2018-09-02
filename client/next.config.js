@@ -6,7 +6,7 @@ const configs = {
 
   webpack: webpackCfg => {
     return webpackCfg
-  },
+  }
 }
 
 module.exports = nextImages(configs)
