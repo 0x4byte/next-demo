@@ -5,7 +5,7 @@ module.exports = {
         type: 'console',
         layout: {
           type: 'pattern',
-          pattern: '%[[%d] [%p] (%z) -%] %m'
+          pattern: '%[[%p] [%d{yyyy-MM-dd hh:mm:ss}]%] %m'
         }
       }
     },
