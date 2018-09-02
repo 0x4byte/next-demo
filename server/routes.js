@@ -1,5 +1,6 @@
 import Router from 'koa-router'
 import nextApp from '../client/next'
+import * as exchange from './controller/exchange'
 
 const router = new Router()
 const handle = nextApp.getRequestHandler()
@@ -21,6 +22,9 @@ router.get('/home', async ctx => {
 router.get('/about', async ctx => {
   ctx.body = await renderHtml(ctx, '/about')
 })
+
+// apis
+router.get('/api/i18n/', exchange.fetchI18nResource)
 
 // other request.
 router.get('*', async ctx => {

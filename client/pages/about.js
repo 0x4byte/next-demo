@@ -2,7 +2,6 @@ import React from 'react'
 import Button from 'modules/app/components/Button'
 import fetch from 'isomorphic-fetch'
 import { FormattedMessage } from 'react-intl'
-// import Router from 'next/router'
 import Link from 'next/link'
 
 const fetchExchange = () => {
