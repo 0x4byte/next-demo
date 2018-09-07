@@ -1,5 +1,6 @@
 import path from 'path'
 import next from 'next'
+import '../env/init'
 import conf from './next.config'
 
 const env = process.env.NODE_ENV
