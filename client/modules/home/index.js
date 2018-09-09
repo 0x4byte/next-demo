@@ -1,14 +1,14 @@
 import React from 'react'
 import Link from 'next/link'
+import { Button } from 'antd'
 import { FormattedMessage } from 'react-intl'
 import { connect } from 'react-redux'
 
-import Button from 'modules/app/components/Button'
 import { add } from './reducer'
 
 class Home extends React.Component {
   state = {
-    value: 1
+    value: 1,
   }
 
   setSelectValue = () => {
@@ -35,14 +35,14 @@ class Home extends React.Component {
           <option value={2}>22</option>
           <option value={3}>33</option>
         </select>
-        <img src={require('./images/songda.png')} alt="huang" />
+        {/* <img src={require('./images/songda.png')} alt="huang" /> */}
         <Link href="/about" prefetch>
           <a>about</a>
         </Link>
         <Button onClick={this.props.add}>button</Button>
         <div>Count: {this.props.count}</div>
-        <Button theme="primary" onClick={this.setSelectValue}>
-          DynamicBtn-toggle-language-en
+        <Button type="primary" onClick={this.setSelectValue}>
+          toggle-locale
         </Button>
       </div>
     )
@@ -51,7 +51,7 @@ class Home extends React.Component {
 
 export default connect(
   state => ({
-    count: state.home.count
+    count: state.home.count,
   }),
-  { add }
+  { add },
 )(Home)

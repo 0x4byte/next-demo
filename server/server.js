@@ -5,7 +5,7 @@ import logger from './middlewares/logger'
 import proxy from './middlewares/proxy'
 import router from './routes'
 
-const port = 3010
+const port = process.env.PORT
 const env = process.env.NODE_ENV
 
 const app = nextApp

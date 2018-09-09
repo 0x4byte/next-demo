@@ -1,6 +1,5 @@
 import path from 'path'
 import next from 'next'
-import '../env/init'
 import conf from './next.config'
 
 const env = process.env.NODE_ENV
@@ -10,7 +9,7 @@ const dir = path.join(process.cwd(), './client')
 const app = next({
   dev,
   dir,
-  conf
+  conf,
 })
 
 export default app

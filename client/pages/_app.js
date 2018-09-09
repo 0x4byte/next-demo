@@ -6,7 +6,7 @@ import zh from 'react-intl/locale-data/zh'
 import withRedux from 'next-redux-wrapper'
 
 import { Provider } from 'react-redux'
-import store from '../stores/store'
+import store from 'stores/store'
 
 import Layout from 'modules/layout/'
 import { localData } from 'modules/app/constants/locale'
@@ -21,7 +21,7 @@ class Body extends App {
 
     props.appProps = {
       locale: queryLocale,
-      messages: data
+      messages: data,
     }
 
     props.pageProps = {}

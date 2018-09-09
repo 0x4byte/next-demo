@@ -1,36 +1,27 @@
-const withImages = require('next-images')
-const { injectBabelPlugin } = require('../utils')
+require('../build/env/init')
+const nextImages = require('next-images')
+const transpiles = require('@weco/next-plugin-transpile-modules')
+const nextLess = require('@zeit/next-less')
+const { compose, withOptions } = require('../build/utils')
+const nextAntdPlugin = require('../build/plugins/nextAntdPlugin')
+const nextStyledPlugin = require('../build/plugins/nextStyledPlugin')
 
-const compose = (...funcs) => {
-  if (funcs.length === 0) {
-    return config => config
-  }
-
-  if (funcs.length === 1) {
-    return funcs[0]
-  }
-  return funcs.reduce((a, b) => config => a(b(config)))
-}
-
-const withPlugins = compose(withImages)
+const withNextPlugins = compose(
+  nextImages,
+  nextAntdPlugin,
+  nextStyledPlugin,
+  withOptions(nextLess, {
+    lessLoaderOptions: {
+      modifyVars: require('../build/antd-theme'),
+      javascriptEnabled: true,
+    },
+  }),
+  withOptions(transpiles, { transpileModules: ['antd'] }),
+)
 
 const configs = {
   useFileSystemPublicRoutes: false,
   assetPrefix: '',
-
-  webpack: webpackCfg => {
-    injectBabelPlugin(
-      [
-        'styled-components',
-        {
-          ssr: true,
-          displayName: true
-        }
-      ],
-      webpackCfg
-    )
-    return webpackCfg
-  }
 }
 
-module.exports = withPlugins(configs)
+module.exports = withNextPlugins(configs)

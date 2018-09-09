@@ -12,6 +12,7 @@ export default class MyDocument extends Document {
       <html>
         <Head>
           <style>{`body { margin: 0 } /* custom! */`}</style>
+          <link rel="stylesheet" href="/_next/static/style.css" />
         </Head>
         <body className="custom_class">
           <Main />
